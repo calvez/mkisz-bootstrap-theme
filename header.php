@@ -73,7 +73,7 @@
 				</div><!-- end of #logo -->
 
 				<?php if( ! is_front_page() || ! is_home() ) : ?>
-				<div id="line"></div>
+				
 				<?php endif; ?>
 			</div>
 			<div class="col-md-9">

@@ -126,7 +126,6 @@ if ( ! function_exists( 'activello_featured_slider' ) ) :
  * Featured image slider, displayed on front page for static page and blog
  */
 function activello_featured_slider() {
-  if ( ( is_home() || is_front_page() ) && get_theme_mod( 'activello_featured_hide' ) == 1 ) {
 		
 		wp_enqueue_style( 'flexslider-css' );
 		wp_enqueue_script( 'flexslider-js' );
@@ -145,10 +144,10 @@ function activello_featured_slider() {
                 echo '<li><a href="' . get_permalink() . '">';
                       echo get_the_post_thumbnail( get_the_ID(), 'activello-slider' );
 
-                    echo '<div class="flex-caption">';
+/*                    echo '<div class="flex-caption">';
                         if ( get_the_title() != '' ) echo '<h2 class="entry-title">'. get_the_title().'</h2>';
                         echo '<div class="read-more">' . __( 'Read More', 'activello' ) .'</div>';
-                    echo '</div>';
+                    echo '</div>';*/
 
                 echo '</a></li>';
             endif;
@@ -159,7 +158,6 @@ function activello_featured_slider() {
 
       echo '</ul>';
     echo ' </div>';
-  }
 }
 endif;
 
