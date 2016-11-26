@@ -142,16 +142,15 @@ function activello_featured_slider() {
                 
             if ( (function_exists( 'has_post_thumbnail' )) && ( has_post_thumbnail() ) ) :
 
-                echo '<li>';
+                echo '<li><a href="' . get_permalink() . '">';
                       echo get_the_post_thumbnail( get_the_ID(), 'activello-slider' );
 
                     echo '<div class="flex-caption">';
-                      echo get_the_category_list();
-                        if ( get_the_title() != '' ) echo '<a href="' . get_permalink() . '"><h2 class="entry-title">'. get_the_title().'</h2></a>';
-                        echo '<div class="read-more"><a href="' . get_permalink() . '">' . __( 'Read More', 'activello' ) .'</a></div>';
+                        if ( get_the_title() != '' ) echo '<h2 class="entry-title">'. get_the_title().'</h2>';
+                        echo '<div class="read-more">' . __( 'Read More', 'activello' ) .'</div>';
                     echo '</div>';
 
-                echo '</li>';
+                echo '</a></li>';
             endif;
 
         endwhile; 

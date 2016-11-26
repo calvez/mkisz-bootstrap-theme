@@ -77,7 +77,7 @@ function activello_setup() {
   add_image_size( 'activello-medium', 640, 480, true );
   add_image_size( 'mkisz-4-front', 235, 280, false);
   add_image_size( 'one', 250, 120, true ); // Set thumbnail size
-  add_image_size( 'two', 500, 250, true ); // Set thumbnail size
+  add_image_size( 'two', 800, 400, true ); // Set thumbnail size
   add_image_size( 'big', 546, 387, true ); // Set thumbnail size
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
@@ -194,10 +194,9 @@ function activello_scripts() {
   // Add Google Fonts
   wp_enqueue_style( 'activello-fonts', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&amp;subset=latin-ext|Montserrat:400,700&amp;subset=latin-ext|Maven+Pro:400,700&amp;subset=latin-ext');
 
-  // Add slider CSS only if is front page ans slider is enabled
-  if( ( is_home() || is_front_page() ) && get_theme_mod('activello_featured_hide') == 1 ) {
+  // Add slider CSS only if is front page ans slider is enabled  ///  ADD THAT ANYWAY
     wp_enqueue_style( 'flexslider-css', get_template_directory_uri().'/inc/css/flexslider.css' );
-  }
+  
 
   // Add main theme stylesheet
   wp_enqueue_style( 'activello-style', get_stylesheet_uri() );
@@ -208,10 +207,8 @@ function activello_scripts() {
   // Add Bootstrap default JS
   wp_enqueue_script('activello-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
 
-  // Add slider JS only if is front page ans slider is enabled
-  if( ( is_home() || is_front_page() ) && get_theme_mod('activello_featured_hide') == 1 ) {
-    wp_register_script( 'flexslider-js', get_template_directory_uri() . '/inc/js/flexslider.min.js', array('jquery'), '20140222', true );
-  }
+  // Add slider JS only if is front page ans slider is enabled  ///   ADD THAT ANYWAY
+  wp_register_script( 'flexslider-js', get_template_directory_uri() . '/inc/js/flexslider.min.js', array('jquery'), '20140222', true );
 
   // Main theme related functions
   wp_enqueue_script( 'activello-functions', get_template_directory_uri() . '/inc/js/functions.min.js', array('jquery') );

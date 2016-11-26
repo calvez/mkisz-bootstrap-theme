@@ -58,8 +58,8 @@ html[xmlns] .slides {display: block;}
 .flex-direction-nav a.flex-next:before  { content: '\f105'; }
 
 /* Control Nav */
-.flex-control-nav {width: 100%; position: absolute; bottom: -40px; text-align: center;}
-.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-nav { width: 100%; position: absolute; bottom: -40px; text-align: center;}
+.flex-control-nav li {margin: 0 6px; display: none; zoom: 1; *display: none;}
 .flex-control-paging li a {border-radius: 50%; width: 12px; height: 12px; display: block; border: 2px solid #ffffff; cursor: pointer; text-indent: -9999px; -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -moz-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -o-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); box-shadow: inset 0 0 3px rgba(0,0,0,0.3); }
 .flex-control-paging li a:hover { background: #ffffff; }
 .flex-control-paging li a.flex-active { background: #ffffff; cursor: default; }
@@ -82,6 +82,9 @@ html[xmlns] .slides {display: block;}
   margin: auto;
   width: auto;
 }
+
+
+
 .flex-control-nav {
   bottom: 10px;
   z-index: 1000;
@@ -89,6 +92,11 @@ html[xmlns] .slides {display: block;}
 .flexslider .slides li {
   position:relative;
 }
+
+.flexslider .slides li:hover {
+    opacity: 0.7;
+}
+
 .flex-caption {
   position: absolute;
   left: 0;
@@ -105,11 +113,11 @@ html[xmlns] .slides {display: block;}
 	
 }
 .flex-caption h2 {
-	color: #ffffff;
+	color: #468c5d;
 	font-family: 'Lora', serif;
 	font-style: italic;
-	font-size: 28px;
-	margin-bottom: 20px;
+	font-size: 20px;
+	margin-bottom: 18px;
 }
 .flex-caption .post-categories a,
 .flex-caption .read-more a {
