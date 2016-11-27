@@ -1,4 +1,3 @@
-<h3>Támogatóink:</h3>
 <div class="row">
   <div class="col-xs-6 col-md-2">
     <?php if (!function_exists('dynamic_sidebar') ||  
