@@ -32,7 +32,7 @@ get_header(); ?>
           <?php the_excerpt(); ?>   
 
     </div>
-
+    </div>
     <?php endwhile; ?>
     <?php else : ?>
     <?php endif; ?> 
@@ -71,7 +71,6 @@ get_header(); ?>
     <?php endif; ?> 
     <?php wp_reset_query(); ?>
     <!-- #LOOP2 --> 
-        </div>
   </main><!-- #main -->
 
 </div><!-- #primary -->
