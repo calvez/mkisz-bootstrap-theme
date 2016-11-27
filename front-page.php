@@ -30,7 +30,7 @@ get_header(); ?>
           </div><!-- .col2 -->
           <h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
           <?php the_excerpt(); ?>   
-
+          <div class="time"><?php the_category(','); ?></div>
     </div>
     </div>
     <?php endwhile; ?>
@@ -54,7 +54,7 @@ get_header(); ?>
                 'alt' => trim(strip_tags( $post->post_excerpt )),
                 'title' => trim(strip_tags( $post->post_title )),
                 );
-                          $thumbID = get_the_post_thumbnail( $post->ID, 'one', $imgsrcparam ); ?>
+                          $thumbID = get_the_post_thumbnail( $post->ID, 'two', $imgsrcparam ); ?>
                             <div class="single-featured wp-post-image"><a href="<?php the_permalink() ?>"><?php echo "$thumbID"; ?></a></div>
 
                         
