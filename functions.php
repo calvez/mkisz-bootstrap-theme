@@ -186,6 +186,15 @@ function activello_widgets_init() {
           'before_title'  => '<h3 class="widget-title">',
           'after_title'   => '</h3>',
     ));  
+    
+    register_sidebar(array(
+          'name'=>'Bottom 5',
+          'id'            => 'bottom_5',
+          'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+          'after_widget'  => '</aside>',
+          'before_title'  => '<h3 class="widget-title">',
+          'after_title'   => '</h3>',
+    ));      
 
   register_widget( 'activello_social_widget' );
   register_widget( 'activello_recent_posts' );
