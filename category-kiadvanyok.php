@@ -76,21 +76,28 @@ get_header(); ?>
 					endif;
 				?>
 			</header><!-- .page-header -->
-			<h1>Kiadványok</h1>
 
 			<?php /* Start the Loop */ ?>
-			<p>
-This is some text that will display at the top of the Category page.
-</p>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<p>A Magyar Képzőművészek és Iparművészek Szövetségének kiadványai</p>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+			<?php while ( have_posts() ) : the_post(); ?>
+			<div class="col-md-4">
+			<div class="post-inner-content">
+			<header class="entry-header page-header">
+				<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			</header><!-- .entry-header -->
+						
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                                <?php the_post_thumbnail( 'cover', array( 'class' => 'single-featured' )); ?>
+                        </a>
+                        
+			<div class="entry-summary">
+				<?php the_excerpt(); ?>
+				<p><a class="btn btn-default read-more" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'activello' ); ?></a></p>
+			</div><!-- .entry-summary -->
+			</div>
+			</div>
+
 
 			<?php endwhile; ?>
 
@@ -101,9 +108,8 @@ This is some text that will display at the top of the Category page.
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
-
+			
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

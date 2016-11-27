@@ -41,6 +41,9 @@ function activello_main_content_bootstrap_classes() {
   if (is_front_page() ) {
     return 'frontpage_container';
   }
+  if (is_archive() ) {
+    return 'col-sm-12 col-md-12';
+  }  
 	return 'col-sm-12 col-md-8';
 }
 endif; // activello_main_content_bootstrap_classes
@@ -79,6 +82,8 @@ function activello_setup() {
   add_image_size( 'one', 250, 120, true ); // Set thumbnail size
   add_image_size( 'two', 570, 270, true ); // Set thumbnail size
   add_image_size( 'big', 546, 387, true ); // Set thumbnail size
+  add_image_size( 'cover', 400, false ); // Set thumbnail size
+
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
     'primary'      => esc_html__( 'Primary Menu', 'activello' )
