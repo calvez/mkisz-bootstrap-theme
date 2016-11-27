@@ -39,11 +39,11 @@ function activello_main_content_bootstrap_classes() {
 		return 'col-sm-12 col-md-12';
 	}
   if (is_front_page() ) {
-    return 'frontpage_container';
+    return 'col-sm-12 col-md-12';
   }
   if (is_archive() ) {
     return 'col-sm-12 col-md-12';
-  }  
+  } 
 	return 'col-sm-12 col-md-8';
 }
 endif; // activello_main_content_bootstrap_classes
