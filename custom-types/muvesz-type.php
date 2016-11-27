@@ -112,7 +112,7 @@ function cptui_register_my_cpts_muvesz() {
 // End of cptui_register_my_cpts_muvesz()
 }
 
-
+/*
 // Add kategory (szakosztaly) slug to content type urls
 
 function muvesz_post_link( $post_link, $id = 0 ){
@@ -120,11 +120,11 @@ function muvesz_post_link( $post_link, $id = 0 ){
     if ( is_object( $post ) ){
         $terms = wp_get_object_terms( $post->ID, 'course' );
         if( $terms ){
-            return str_replace( '%szakosztaly%' , $terms[0]->slug , $post_link );
+            return str_replace( '/%szakosztaly%/' , $terms[0]->slug , $post_link );
         }
     }
     return $post_link;  
 }
-add_filter( 'post_type_link', 'muvesz_post_link', 1, 3 );
+add_filter( 'post_type_link', 'muvesz_post_link', 1, 3 );*/
 
 ?>

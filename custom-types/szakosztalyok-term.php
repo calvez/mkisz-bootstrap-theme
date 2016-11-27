@@ -2,24 +2,12 @@
 add_action( 'init', 'cptui_register_my_taxes' );
 function cptui_register_my_taxes() {
 	$labels = array(
-		"name" => __( 'Szakosztályok', '' ),
-		"singular_name" => __( 'Szakosztály', '' ),
-		"menu_name" => __( 'Szakosztályok', '' ),
-		"all_items" => __( 'Összes szekosztály', '' ),
-		"edit_item" => __( 'Szakosztály szerkesztése', '' ),
-		"view_item" => __( 'Megtekintés', '' ),
-		"update_item" => __( 'Frissítés', '' ),
-		"add_new_item" => __( 'Új szakosztály', '' ),
-		"new_item_name" => __( 'Új szakosztály neve', '' ),
-		"parent_item" => __( 'Szülő elem', '' ),
-		"search_items" => __( 'Keresés', '' ),
-		"popular_items" => __( 'Szakosztályok', '' ),
-		"add_or_remove_items" => __( 'Szakosztály törlése', '' ),
-		"not_found" => __( 'nem található', '' ),
+		"name" => __( 'Szakosztályok', 'activello' ),
+		"singular_name" => __( 'Szakosztály', 'activello' ),
 		);
 
 	$args = array(
-		"label" => __( 'Szakosztályok', '' ),
+		"label" => __( 'Szakosztályok', 'activello' ),
 		"labels" => $labels,
 		"public" => true,
 		"hierarchical" => true,
@@ -28,38 +16,26 @@ function cptui_register_my_taxes() {
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"query_var" => true,
-		"rewrite" => false,
-		"show_admin_column" => true,
+		"rewrite" => array( 'slug' => 'szakosztaly', 'with_front' => true, ),
+		"show_admin_column" => false,
 		"show_in_rest" => false,
 		"rest_base" => "",
 		"show_in_quick_edit" => true,
 	);
-	register_taxonomy( "muvesz", array( "muvesz" ), $args );
+	register_taxonomy( "szakosztaly", array( "muvesz" ), $args );
 
 // End cptui_register_my_taxes()
 }
 
-add_action( 'init', 'cptui_register_my_taxes_muvesz' );
-function cptui_register_my_taxes_muvesz() {
+add_action( 'init', 'cptui_register_my_taxes_szakosztaly' );
+function cptui_register_my_taxes_szakosztaly() {
 	$labels = array(
-		"name" => __( 'Szakosztályok', '' ),
-		"singular_name" => __( 'Szakosztály', '' ),
-		"menu_name" => __( 'Szakosztályok', '' ),
-		"all_items" => __( 'Összes szekosztály', '' ),
-		"edit_item" => __( 'Szakosztály szerkesztése', '' ),
-		"view_item" => __( 'Megtekintés', '' ),
-		"update_item" => __( 'Frissítés', '' ),
-		"add_new_item" => __( 'Új szakosztály', '' ),
-		"new_item_name" => __( 'Új szakosztály neve', '' ),
-		"parent_item" => __( 'Szülő elem', '' ),
-		"search_items" => __( 'Keresés', '' ),
-		"popular_items" => __( 'Szakosztályok', '' ),
-		"add_or_remove_items" => __( 'Szakosztály törlése', '' ),
-		"not_found" => __( 'nem található', '' ),
+		"name" => __( 'Szakosztályok', 'activello' ),
+		"singular_name" => __( 'Szakosztály', 'activello' ),
 		);
 
 	$args = array(
-		"label" => __( 'Szakosztályok', '' ),
+		"label" => __( 'Szakosztályok', 'activello' ),
 		"labels" => $labels,
 		"public" => true,
 		"hierarchical" => true,
@@ -68,15 +44,25 @@ function cptui_register_my_taxes_muvesz() {
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"query_var" => true,
-		"rewrite" => false,
-		"show_admin_column" => true,
+		"rewrite" => array( 'slug' => 'szakosztaly', 'with_front' => true, ),
+		"show_admin_column" => false,
 		"show_in_rest" => false,
 		"rest_base" => "",
 		"show_in_quick_edit" => true,
 	);
-	register_taxonomy( "muvesz", array( "muvesz" ), $args );
+	register_taxonomy( "szakosztaly", array( "muvesz" ), $args );
 
-// End cptui_register_my_taxes_muvesz()
+// End cptui_register_my_taxes_szakosztaly()
 }
+
+
+// ABC sorrendbe teszi a szakosztályokat
+function szakosztalyindex_queries( $query ) {
+	if ( ! is_admin() && ( is_post_type_archive( 'muvesz' ) || is_tax( 'szakosztaly' ) ) && $query->is_main_query() ) {
+		$query->set('orderby', 'name');
+		$query->set('order', 'ASC');
+	}
+}
+add_action( 'pre_get_posts', 'szakosztalyindex_queries' );
 
 ?>

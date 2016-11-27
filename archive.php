@@ -63,7 +63,7 @@ get_header(); ?>
 							esc_html_e( 'Chats', 'activello' );
 
 						else :
-							esc_html_e( 'Archives', 'activello' );
+							esc_html_e( '', 'activello' );
 
 						endif;
 					?>

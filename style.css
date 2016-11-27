@@ -349,6 +349,7 @@ article.post:first-child .post-inner-content {
 .entry-header {
     text-align: center;
 }
+
 .entry-title {
     font-family: "Lora", serif;
     font-size: 28px;
@@ -1612,4 +1613,10 @@ p.logged-in-as {
 .headerdown {
     border-bottom: 15px solid #2e6735;
     position: relative;
+}
+
+/* artists */
+
+.muvesz-list {
+    text-align: left;
 }
