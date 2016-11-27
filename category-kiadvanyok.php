@@ -88,7 +88,7 @@ get_header(); ?>
 			</header><!-- .entry-header -->
 						
                         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                                <?php the_post_thumbnail( 'cover', array( 'class' => 'single-featured' )); ?>
+                                <?php the_post_thumbnail( 'activello-thumbnail', array( 'class' => 'single-featured' )); ?>
                         </a>
                         
 			<div class="entry-summary">
