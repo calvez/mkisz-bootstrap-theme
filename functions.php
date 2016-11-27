@@ -146,23 +146,60 @@ function mkisz_widgets_init() {
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
   ));
+
+/* --------------------------------------------------------------
+       Bottom Widgets - MKISZ
+-------------------------------------------------------------- */
+    register_sidebar(array(
+          'name'=>'Bottom 1',
+          'id'            => 'bottom_1',
+          'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+          'after_widget'  => '</aside>',
+          'before_title'  => '<h3 class="widget-title">',
+          'after_title'   => '</h3>',
+    ));
+
+    register_sidebar(array(
+          'name'=>'Bottom 2',
+          'id'            => 'bottom_2',
+          'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+          'after_widget'  => '</aside>',
+          'before_title'  => '<h3 class="widget-title">',
+          'after_title'   => '</h3>',
+    ));
+    
+    register_sidebar(array(
+          'name'=>'Bottom 3',
+          'id'            => 'bottom_3',
+          'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+          'after_widget'  => '</aside>',
+          'before_title'  => '<h3 class="widget-title">',
+          'after_title'   => '</h3>',
+    ));
+    
+    register_sidebar(array(
+          'name'=>'Bottom 4',
+          'id'            => 'bottom_4',
+          'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+          'after_widget'  => '</aside>',
+          'before_title'  => '<h3 class="widget-title">',
+          'after_title'   => '</h3>',
+    ));
+    
+    register_sidebar(array(
+          'name'=>'Bottom 5',
+          'id'            => 'bottom_5',
+          'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+          'after_widget'  => '</aside>',
+          'before_title'  => '<h3 class="widget-title">',
+          'after_title'   => '</h3>',
+    ));
 }
+
 add_action( 'widgets_init', 'mkisz_widgets_init' );
 
-function my_custom_sidebar() {
-    register_sidebar(
-        array (
-            'name' => __( 'Custom', 'your-theme-domain' ),
-            'id' => 'custom-side-bar',
-            'description' => __( 'Custom Sidebar', 'your-theme-domain' ),
-            'before_widget' => '<div class="widget-content">',
-            'after_widget' => "</div>",
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        )
-    );
-}
-add_action( 'widgets_init', 'my_custom_sidebar' );
+
+
 
 /* --------------------------------------------------------------
        Theme Widgets
