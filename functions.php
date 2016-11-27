@@ -130,14 +130,6 @@ function activello_widgets_init() {
     'after_title'   => '</h3>',
   ));
 
-  register_widget( 'activello_social_widget' );
-  register_widget( 'activello_recent_posts' );
-  register_widget( 'activello_categories' );
-}
-add_action( 'widgets_init', 'activello_widgets_init' );
-
-
-function mkisz_widgets_init() {
   register_sidebar( array(
     'name'          => esc_html__( 'Hivatalos oldalhoz', 'activello' ),
     'id'            => 'mkisz_right',
@@ -193,11 +185,13 @@ function mkisz_widgets_init() {
           'after_widget'  => '</aside>',
           'before_title'  => '<h3 class="widget-title">',
           'after_title'   => '</h3>',
-    ));
+    ));  
+
+  register_widget( 'activello_social_widget' );
+  register_widget( 'activello_recent_posts' );
+  register_widget( 'activello_categories' );
 }
-
-add_action( 'widgets_init', 'mkisz_widgets_init' );
-
+add_action( 'widgets_init', 'activello_widgets_init' );
 
 
 

@@ -89,6 +89,11 @@
 								</div>
 							<?php activello_header_menu(); // main navigation ?>
 						</div>
+						<div class="nav-search hidden-md hidden-lg"><?php 
+                            add_filter('get_search_form', 'activello_header_search_filter',10,3);
+                            echo get_search_form();
+                            remove_filter('get_search_form', 'activello_header_search_filter');?>							
+						</div>
 					</nav><!-- .site-navigation -->
 					<?php activello_featured_slider(); ?>
 			</div>

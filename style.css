@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin: 20px 0;
 }
 .container {
-    max-width: 1090px;
+    max-width: 1170;
 }
 h1, .h1 {
     font-size: 28px;
@@ -351,10 +351,10 @@ article.post:first-child .post-inner-content {
 }
 .entry-title {
     font-family: "Lora", serif;
-    font-size: 24px;
+    font-size: 28px;
     font-style: italic;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 2em;
 }
 .entry-footer {
     margin-top: 20px;
@@ -950,7 +950,7 @@ div.flex-caption {
     font-weight: 400;
     min-height: auto;
     padding: 0;
-    box-shadow: 0 0 2px #e3e3e3;
+    //box-shadow: 0 0 2px #e3e3e3;
 }
 .navbar-default .navbar-nav> li> a {
     color: #1c202a;

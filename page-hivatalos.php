@@ -29,11 +29,7 @@ get_header(); ?>
       <?php endwhile; // end of the loop. ?>
 
     </main><!-- #main -->
-
   </div><!-- #primary -->
-  <div id="secondary" class="widget-area col-sm-12 col-md-3" role="complementary">
-    <div class="inner">
-<?php dynamic_sidebar( 'custom-side-bar' ); ?>
-</div>
-</div>
+
+<?php get_sidebar('mkisz-right'); ?>
 <?php get_footer(); ?>
