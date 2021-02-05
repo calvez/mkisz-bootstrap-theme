@@ -1,5 +1,5 @@
 /*
-Theme Name: MKISZ Theme
+Theme Name: MKISZ Theme ativello
 Theme URI: mkisz.hu
 Author: clvz - onlineprojects.hu
 Author URI: 
@@ -8,8 +8,7 @@ License: GNU General Public License v2 or later
 License URI: 
 Text Domain: activello
 Domain Path: /languages/
-Template:     
-activelo text domain, bootstrap 3
+
 */
 
 
@@ -38,7 +37,7 @@ activelo text domain, bootstrap 3
 ----------------------------------------------- */
 
 body {
-    color: #696969;
+    color: #222222;
     background-color: #FFFFFF;
     word-wrap: break-word;
     font-family: 'Lora', serif;
@@ -46,7 +45,7 @@ body {
     font-size: 15px;
 }
 a {
-    color: #393939;
+    color: #222222;
     text-decoration: none;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -70,7 +69,7 @@ a:focus {
     color: #fff;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: #696969;
+    color: #444;
     font-weight: 400;
     font-family: 'Lora', serif;
     margin: 20px 0;
@@ -362,7 +361,7 @@ article.post:first-child .post-inner-content {
     text-align: center;
 }
 .entry-footer> *, .entry-footer a {
-    color: #696969;
+    color: #222222;
     margin: 0 6px;
 }
 .more-link, .says {
@@ -372,9 +371,9 @@ article.post:first-child .post-inner-content {
     text-align: center;
 }
 .read-more a {
-    border-left: 2px solid #696969;
-    border-right: 2px solid #696969;
-    color: #696969;
+    border-left: 2px solid #222222;
+    border-right: 2px solid #222222;
+    color: #222222;
     font-family: 'Maven Pro', sans-serif;
     font-weight: 700;
     line-height: 1.2;
@@ -429,7 +428,7 @@ article.post .post-categories:after, .post-inner-content .cat-item:after {
     background: #468c5d;
 }
 article.post .post-categories a, .post-inner-content .cat-item a {
-    color: #696969;
+    color: #222222;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -595,7 +594,7 @@ article.grid iframe {
     max-width: 100%;
 }
 .thumbnail .caption {
-    color: #696969;
+    color: #222222;
 }
 .wp-caption img[class*="wp-image-"] {
     display: block;
@@ -776,7 +775,7 @@ ul.children, ul.children li {
 .btn-default, .label-default, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .btn.btn-default, button, .input-group-btn:last-child>.btn, input[type=submit] {
     background: #f2f2f2;
     border-color: transparent;
-    color: #696969;
+    color: #222222;
     display: inline-block;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
@@ -1442,7 +1441,7 @@ p.logged-in-as {
     margin-top: 10px;
 }
 .copyright, .copyright a {
-    color: #696969;
+    color: #222222;
 }
 #colophon {
     padding: 50px 0;
@@ -1509,7 +1508,7 @@ p.logged-in-as {
     text-align: left;
 }
 #social a {
-    color: #696969;
+    color: #222222;
     display: inline-block;
     font-size: 18px;
     list-style: none;
@@ -1526,7 +1525,7 @@ p.logged-in-as {
 }
 .header-search-icon {
     background: transparent;
-    color: #696969;
+    color: #222222;
 }
 .header-search-icon:hover {
     background: transparent;
@@ -1619,4 +1618,24 @@ p.logged-in-as {
 
 .muvesz-list {
     text-align: left;
+}
+
+
+.time {
+    padding: 1em 0 1em 0em;
+}
+
+/* muvesz content partial - all centered*/
+.muvesz-content p {
+    text-align: left;
+}
+
+// .img-esemeny-list {
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto
+// }
+
+.img-single {
+    float: left;
 }

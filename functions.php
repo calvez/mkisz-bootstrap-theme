@@ -11,6 +11,9 @@ require_once( 'custom-types/muvesz-type.php' );
 /** Add Szakosztalyok Taxonomy */
 require_once( 'custom-types/szakosztalyok-term.php' );
 
+/** Add MKISZ position Taxonomy */
+require_once( 'custom-types/mkisz-position.php' );
+
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -38,13 +41,16 @@ function activello_main_content_bootstrap_classes() {
 	if ( is_page_template( 'page-fullwidth.php' ) ) {
 		return 'col-sm-12 col-md-12';
 	}
+  if ( is_category( $category = 'kiadvanyok' ) ) {
+    return 'col-sm-12 col-md-12';
+  }  
   if (is_front_page() ) {
     return 'col-sm-12 col-md-12';
   }
   if (is_archive() ) {
-    return 'col-sm-12 col-md-12';
+    return 'col-sm-12 col-md-9';
   }
-	return 'col-sm-12 col-md-8';
+	return 'col-sm-12 col-md-9';
 }
 endif; // activello_main_content_bootstrap_classes
 
@@ -77,6 +83,7 @@ function activello_setup() {
   add_image_size( 'activello-featured', 1170, 550, true );
   add_image_size( 'activello-slider', 250, 250, true );
   add_image_size( 'activello-thumbnail', 330, 220, true );
+  add_image_size( 'mkisz-artist-thumbnail', 330, 330, true );  
   add_image_size( 'activello-medium', 640, 480, true );
   add_image_size( 'mkisz-4-front', 235, 280, false);
   add_image_size( 'one', 250, 120, true ); // Set thumbnail size
@@ -137,7 +144,7 @@ function activello_widgets_init() {
 
   register_sidebar( array(
     'name'          => esc_html__( 'Hivatalos oldalhoz', 'activello' ),
-    'id'            => 'mkisz_right',
+    'id'            => 'mkisz-right',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',
     'before_title'  => '<h3 class="widget-title">',
@@ -237,7 +244,7 @@ function activello_scripts() {
   wp_enqueue_style( 'activello-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
 
   // Add Google Fonts
-  wp_enqueue_style( 'activello-fonts', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&amp;subset=latin-ext|Montserrat:400,700&amp;subset=latin-ext|Maven+Pro:400,700&amp;subset=latin-ext');
+  wp_enqueue_style( 'activello-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&amp;subset=latin-ext|Montserrat:400,700&amp;subset=latin-ext|Maven+Pro:400,700&amp;subset=latin-ext');
 
   // Add slider CSS only if is front page ans slider is enabled  ///  ADD THAT ANYWAY
     wp_enqueue_style( 'flexslider-css', get_template_directory_uri().'/inc/css/flexslider.css' );
@@ -354,4 +361,18 @@ add_action( 'after_setup_theme', 'activello_woo_setup' );
 function activello_header_search_filter($form){
     $form = '<form action="'.esc_url( home_url( "/" ) ).'" method="get"><input type="text" name="s" value="'.get_search_query().'" placeholder="'. esc_attr_x( __('Search', 'activello'), 'search placeholder', 'activello' ).'"><button type="submit" class="header-search-icon" name="submit" id="searchsubmit" value="'. esc_attr_x( 'Search', 'submit button', 'activello' ).'"><i class="fa fa-search"></i></button></form>';
     return $form;
+}
+
+
+
+function get_excerpt(){
+    $excerpt = get_the_content();
+    $excerpt = preg_replace(" ([.*?])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, 250);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'... <a href="'.$permalink.'">[...]</a>';
+return $excerpt;
 }

@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-
+<div class="col-md-9 col-xs-12">
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -24,16 +24,16 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( esc_html__( 'Author: %s', 'activello' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( esc_html__( 'Szerző: %s', 'activello' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( esc_html__( 'Day: %s', 'activello' ), '<span>' . get_the_date() . '</span>' );
+							printf( esc_html__( 'Nap: %s', 'activello' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( esc_html__( 'Month: %s', 'activello' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'activello' ) ) . '</span>' );
+							printf( esc_html__( 'Hónap: %s', 'activello' ), '<span>' . get_the_date( _x( 'Y F', 'monthly archives date format', 'activello' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( esc_html__( 'Year: %s', 'activello' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'activello' ) ) . '</span>' );
+							printf( esc_html__( 'Év: %s', 'activello' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'activello' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 							esc_html_e( 'Asides', 'activello' );
@@ -85,7 +85,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'content-grid', get_post_format() );
 				?>
 
 			<?php endwhile; ?>
@@ -100,6 +100,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
-
+</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

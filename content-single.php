@@ -8,7 +8,7 @@
 	<div class="blog-item-wrap">
 		<div class="post-inner-content">
 			<header class="entry-header page-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<h1 class="entry-title text-left"><?php the_title(); ?></h1>
 
 				<?php if ( 'post' == get_post_type() ) : ?>
 				<div class="entry-meta">
@@ -30,8 +30,9 @@
 			</header><!-- .entry-header -->
 			
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                    <?php the_post_thumbnail( 'activello-featured', array( 'class' => 'single-featured' )); ?>
+                    <?php the_post_thumbnail( 'activello-featured', array( 'class' => 'single-featured img-single' )); ?>
             </a>
+            <div class="clearfix"></div>
 			
 			<div class="entry-content">
 

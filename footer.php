@@ -15,12 +15,20 @@
 	<div id="footer-area">
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-info container">
-			<?php include (TEMPLATEPATH . "/bottom.php"); ?>	
+			<?php include (TEMPLATEPATH . "/bottom.php"); ?>
+<div class="row">
+<hr>
+<p>Cím: 1061 Budapest, Andrássy út 6. I.em. | Levelezési cím: 1364 Budapest, Pf. 51.<br>
+e-mail: art@mkisz.axelero.net<br>
+Bankszámlaszám: 11705008-20463708<br>
+nyitva tartás: Hétfőtől-csütörtökig 10-18 óráig, (július-augusztusban 10-14 óráig)<br>
+telefon: + 36 1 302-2255<br></p>
+</div>	
 				<div class="row">
 					<?php if( !get_theme_mod('footer_social') ) activello_social_icons(); ?>
 					<div class="copyright col-md-12">
 						<?php echo get_bloginfo( 'name' ); ?> &copy; <?php echo date("Y"); ?> | <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' ); ?></a> <br>
-						<a href="http://onlineprojects.hu" target="_blank">OnlineProjects.hu</a>
+						Site: <a href="http://onlineprojects.hu" target="_blank">OnlineProjects.hu</a>
 					</div>
 				</div>
 			</div><!-- .site-info -->

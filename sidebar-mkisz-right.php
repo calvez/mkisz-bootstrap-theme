@@ -18,32 +18,9 @@
             $show_sidebar = false;
         } ?>
         <?php if( $show_sidebar ): ?>            
-	<div id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
+	<div id="secondary hivatalos" class="widget-area col-sm-12 col-md-3" role="complementary">
 		<div class="inner">
-			<?php do_action( 'before_sidebar' ); ?>
-			<?php if ( ! dynamic_sidebar( 'mkisz_right' ) ) : ?>
-
-				<aside id="search" class="widget widget_search">
-					<?php get_search_form(); ?>
-				</aside>
-
-				<aside id="archives" class="widget">
-					<h3 class="widget-title"><?php esc_html_e( 'Archives', 'activello' ); ?></h3>
-					<ul>
-						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-					</ul>
-				</aside>
-
-				<aside id="meta" class="widget">
-					<h3 class="widget-title"><?php esc_html_e( 'Meta', 'activello' ); ?></h3>
-					<ul>
-						<?php wp_register(); ?>
-						<li><?php wp_loginout(); ?></li>
-						<?php wp_meta(); ?>
-					</ul>
-				</aside>
-
-			<?php endif; // end sidebar widget area ?>
+		<?php dynamic_sidebar( 'mkisz-right' ); ?>
 		</div>
 	</div><!-- #secondary -->
 	<?php endif; ?>
