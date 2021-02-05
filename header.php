@@ -67,16 +67,22 @@
 								<?php activello_header_menu(); // main navigation 
 								?>
 							</div>
-							<div class="nav-search hidden-md hidden-lg">
-								<?php
-								add_filter('get_search_form', 'activello_header_search_filter', 10, 3);
-								echo get_search_form();
-								remove_filter('get_search_form', 'activello_header_search_filter'); ?>
+							<div class="nav-search hidden-md hidden-lg"><?php
+																		add_filter('get_search_form', 'activello_header_search_filter', 10, 3);
+																		echo get_search_form();
+																		remove_filter('get_search_form', 'activello_header_search_filter'); ?>
 							</div>
 						</nav><!-- .site-navigation -->
 					</div>
 					<div class="col-md-3 hidden-xs">
-						<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
+						<a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php
+																																											if ($show_logo && $logo) {
+																																												echo wp_get_attachment_image($logo, 'full');
+																																											} elseif ($show_title) {
+																																												bloginfo('name');
+																																											} else {
+																																												bloginfo('name');
+																																											} ?>
 						</a>
 						<?php echo is_home() ?  '</h1>' : '</span>'; ?>
 						<!-- end of .site-name -->
